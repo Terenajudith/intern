@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: #ffffff;
+}
+.margin_auto{
+    max-width:450px;
+    margin:0 auto;
+}
+.margin_auto label{
+    width: 100%;
+    text-align: left;
+}
+.margin_auto button{
+    margin: 100;
+    padding : 100;
+}
+.margin_auto{
+    
