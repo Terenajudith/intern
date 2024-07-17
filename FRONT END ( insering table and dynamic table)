@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Form</title>
+<!-- Include Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Include Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8f9fa; 
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #ffffff; 
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    .modal-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .form-control {
+        width: 300px; 
+        padding: 10px;
+        margin: 10px auto; 
+    }
+    .btn {
+        margin: 10px 5px;
+    }
+    .logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+    .password-wrapper {
+        position: relative;
+        width: 300px; 
+        margin: 10px auto; 
+    }
+    .password-wrapper i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    table {
+        width: 50%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }    th, td {
+
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="modal-header">
+        c=".\download.img" alt="Logo" class="logo">
+        <h1></h1>
+    </div><img sr
+    <div class="margin_auto" style="width: 100%;">
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" class="form-control" name="email"> <br>
+        <label for="inputPassword4">Password:</label>
+        <div class="password-wrapper">
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+        </div>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-success" onclick="validateAndDisplay(event)">
+        <input type="reset" value="Reset" class="btn btn-success">
+    </div>
+</div>
+
+<!-- Table to display the submitted data -->
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#inputPassword4');
+
+    togglePassword.addEventListener('click', function () {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+    });
+
+    function validateAndDisplay(event) {
+        event.preventDefault();
+        const email = document.getElementById('Email').value;
+        const password = document.getElementById('inputPassword4').value;
+
+        if (email === '') {
+            alert('Email is required.');
+            return false;
+        } else if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        if (password === '') {
+            alert('Password is required.');
+            return false;
+        } else if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            return false;
+        }
+
+        addRowToTable(email, password);
+    }
+
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(email);
+    }
+
+    function addRowToTable(email, password) {
+        const table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        let emptyRowFound = false;
+
+        // Check for an empty row
+        for (let i = 0; i < table.rows.length; i++) {
+            if (table.rows[i].cells[1].innerHTML === "" && table.rows[i].cells[2].innerHTML === "") {
+                table.rows[i].cells[1].innerHTML = email;
+                table.rows[i].cells[2].innerHTML = password;
+                emptyRowFound = true;
+                break;
+            }
+        }
+
+        
+        if (!emptyRowFound) {
+            const newRow = table.insertRow(table.rows.length);
+
+            const serialNumberCell = newRow.insertCell(0);
+            const emailCell = newRow.insertCell(1);
+            const passwordCell = newRow.insertCell(2);
+
+            serialNumberCell.innerHTML = table.rows.length;
+            emailCell.innerHTML = email;
+            passwordCell.innerHTML = password;
+        }
+
+        document.getElementById('Email').value = '';
+        document.getElementById('inputPassword4').value = '';
+        alert('Form submitted successfully!');
+    }
+</script>
+</body>
+</html>
