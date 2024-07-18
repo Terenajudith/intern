@@ -1,0 +1,78 @@
+//libraries are often used to enable Bootstrap components and interactive behaviors.
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+//libraries for bootsrap
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons (optional) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+//foundation
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+
+// JavaScript Libraries
+jQuery:
+
+Link: https://code.jquery.com/jquery-3.6.0.min.js
+Lodash:
+
+Link: https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js
+Moment.js:
+
+Link: https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js
+
+
+//JavaScript Frameworks
+React:
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+Vue.js:
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+
+Angular:
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+//Chart Libraries
+Chart.js:
+
+Link: https://cdn.jsdelivr.net/npm/chart.js
+D3.js:
+
+Link: https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js
+
+//UI Component Libraries
+Material-UI (for React):
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://unpkg.com/@material-ui/core@4.11.4/umd/material-ui.development.js"></script>
+
+Semantic UI:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+//Utility Libraries
+Axios (for making HTTP requests):
+
+Link: https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+GSAP (for animations):
+
+Link: https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js
+
+//Icons and Fonts
+Font Awesome:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+Google Fonts:
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+
+
