@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #f8f9fa;
+            display: block;
+        }
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: #575d63;
+            color: white;
+        }
+        .submenu a {
+            padding-left: 30px;
+            font-size: 16px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="#deviceName" class="sidebar-link"><i class="fas fa-desktop"></i> Device Name</a>
+    <a href="#dashboard" class="sidebar-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="#settings" data-toggle="collapse" data-target="#settingsSubmenu" aria-expanded="false" aria-controls="settingsSubmenu" class="sidebar-link"><i class="fas fa-cogs"></i> Settings</a>
+    <div class="collapse submenu" id="settingsSubmenu">
+        <a href="#general" class="submenu-link"><i class="fas fa-sliders-h"></i> General</a>
+        <a href="#security" class="submenu-link"><i class="fas fa-shield-alt"></i> Security</a>
+        <a href="#radio" class="submenu-link"><i class="fas fa-broadcast-tower"></i> Radio</a>
+        <a href="#network" class="submenu-link"><i class="fas fa-network-wired"></i> Network</a>
+        <a href="#switch" class="submenu-link"><i class="fas fa-exchange-alt"></i> Switch</a>
+        <a href="#qos" class="submenu-link"><i class="fas fa-stream"></i> QoS</a>
+        <a href="#snmp" class="submenu-link"><i class="fas fa-network-wired"></i> SNMP</a>
+    </div>
+    <a href="#maintenance" class="sidebar-link"><i class="fas fa-tools"></i> Maintenance</a>
+    <a href="#tools" data-toggle="collapse" data-target="#toolsSubmenu" aria-expanded="false" aria-controls="toolsSubmenu" class="sidebar-link"><i class="fas fa-wrench"></i> Tools</a>
+    <div class="collapse submenu" id="toolsSubmenu">
+        <a href="#graphs" class="submenu-link"><i class="fas fa-chart-line"></i> Graphs</a>
+        <a href="#spectrumAnalyzer" class="submenu-link"><i class="fas fa-wave-square"></i> Spectrum Analyzer</a>
+        <a href="#alignmentTool" class="submenu-link"><i class="fas fa-ruler-combined"></i> Alignment Tool</a>
+        <a href="#speedTest" class="submenu-link"><i class="fas fa-tachometer-alt"></i> Speed Test</a>
+        <a href="#networkUtilities" class="submenu-link"><i class="fas fa-tools"></i> Network Utilities</a>
+    </div>
+</div>
+
+<div class="content">
+    <h1>HELLO THERE :)</h1>
+    <p>This is the main content area. Click the links in the sidebar to navigate through different sections.</p>
+    <section id="deviceName">
+        <h2>Device Name</h2>
+        <p>This is the device name section.</p>
+    </section>
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <p>This is the dashboard section.</p>
+    </section>
+    <section id="settings">
+        <h2>Settings</h2>
+        <section id="general">
+            <h3>General</h3>
+            <p>This is the general settings section.</p>
+        </section>
+        <section id="security">
+            <h3>Security</h3>
+            <p>This is the security settings section.</p>
+        </section>
+        <section id="radio">
+            <h3>Radio</h3>
+            <p>This is the radio settings section.</p>
+        </section>
+        <section id="network">
+            <h3>Network</h3>
+            <p>This is the network settings section.</p>
+        </section>
+        <section id="switch">
+            <h3>Switch</h3>
+            <p>This is the switch settings section.</p>
+        </section>
+        <section id="qos">
+            <h3>QoS</h3>
+            <p>This is the QoS settings section.</p>
+        </section>
+        <section id="snmp">
+            <h3>SNMP</h3>
+            <p>This is the SNMP settings section.</p>
+        </section>
+    </section>
+    <section id="maintenance">
+        <h2>Maintenance</h2>
+        <p>This is the maintenance section.</p>
+    </section>
+    <section id="tools">
+        <h2>Tools</h2>
+        <section id="graphs">
+            <h3>Graphs</h3>
+            <p>This is the graphs tools section.</p>
+        </section>
+        <section id="spectrumAnalyzer">
+            <h3>Spectrum Analyzer</h3>
+            <p>This is the spectrum analyzer tools section.</p>
+        </section>
+        <section id="alignmentTool">
+            <h3>Alignment Tool</h3>
+            <p>This is the alignment tool section.</p>
+        </section>
+        <section id="speedTest">
+            <h3>Speed Test</h3>
+            <p>This is the speed test tools section.</p>
+        </section>
+        <section id="networkUtilities">
+            <h3>Network Utilities</h3>
+            <p>This is the network utilities tools section.</p>
+        </section>
+    </section>
+</div>
+
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    // Add active class to clicked sidebar links
+    document.addEventListener("DOMContentLoaded", function() {
+        const sidebarLinks = document.querySelectorAll(".sidebar a");
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                sidebarLinks.forEach(link => link.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    });
+</script>
+</body>
+</html>
